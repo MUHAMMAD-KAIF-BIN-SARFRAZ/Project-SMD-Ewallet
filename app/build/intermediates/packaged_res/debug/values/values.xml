@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg_card">#1A1A1A</color>
+    <color name="bg_card_secondary">#222222</color>
+    <color name="bg_dark">#0E0E0E</color>
+    <color name="bg_item">#1E1E1E</color>
+    <color name="blue_accent">#3B82F6</color>
+    <color name="green_income">#22C55E</color>
+    <color name="icon_food">#F59E0B</color>
+    <color name="icon_loan">#8B5CF6</color>
+    <color name="icon_party">#EC4899</color>
+    <color name="icon_salary">#22C55E</color>
+    <color name="nav_active">#FFFFFF</color>
+    <color name="nav_fab_bg">#8B5CF6</color>
+    <color name="nav_inactive">#6B7280</color>
+    <color name="purple_gradient_end">#6366F1</color>
+    <color name="purple_gradient_start">#8B5CF6</color>
+    <color name="purple_light">#A78BFA</color>
+    <color name="purple_primary">#8B5CF6</color>
+    <color name="red_expense">#EF4444</color>
+    <color name="text_hint">#6B7280</color>
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#9CA3AF</color>
+    <dimen name="action_button_size">52dp</dimen>
+    <dimen name="balance_card_height">170dp</dimen>
+    <dimen name="bottom_nav_height">65dp</dimen>
+    <dimen name="card_corner_radius">16dp</dimen>
+    <dimen name="card_inner_padding">16dp</dimen>
+    <dimen name="fab_size">56dp</dimen>
+    <dimen name="icon_size_large">40dp</dimen>
+    <dimen name="icon_size_medium">24dp</dimen>
+    <dimen name="icon_size_small">20dp</dimen>
+    <dimen name="item_spacing">12dp</dimen>
+    <dimen name="screen_padding">20dp</dimen>
+    <dimen name="section_spacing">24dp</dimen>
+    <dimen name="text_balance">32sp</dimen>
+    <dimen name="text_body">14sp</dimen>
+    <dimen name="text_large">18sp</dimen>
+    <dimen name="text_medium">16sp</dimen>
+    <dimen name="text_small">12sp</dimen>
+    <dimen name="text_xlarge">22sp</dimen>
+    <dimen name="transaction_icon_size">44dp</dimen>
+    <string name="app_name">EWallet</string>
+    <string name="debt">Debt</string>
+    <string name="entertainment">Entertainment</string>
+    <string name="family">Family</string>
+    <string name="get_started">Get started</string>
+    <string name="hi_user">Hi </string>
+    <string name="loan">Loan</string>
+    <string name="manage_wallet">Manage your wallet</string>
+    <string name="more">More</string>
+    <string name="onboarding_subtitle">Connect your wallet to your bank accounts\nto improve your experience</string>
+    <string name="others">Others</string>
+    <string name="recent_transactions">Recent transactions</string>
+    <string name="request">Request</string>
+    <string name="salary">Salary</string>
+    <string name="savings">Savings</string>
+    <string name="see_all">See all</string>
+    <string name="shopping">Shopping</string>
+    <string name="statistics">Statistics</string>
+    <string name="top_incomes">Top incomes</string>
+    <string name="top_spendings">Top spendings</string>
+    <string name="top_up">Top up</string>
+    <string name="transfer">Transfer</string>
+    <string name="view_chart">View chart</string>
+    <string name="your_balance">Your balance</string>
+    <style name="TextAppearance.EWallet.AmountNegative" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textColor">@color/red_expense</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+    <style name="TextAppearance.EWallet.AmountPositive" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textColor">@color/green_income</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+    <style name="TextAppearance.EWallet.Balance" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:fontFamily">sans-serif-bold</item>
+        <item name="android:textSize">32sp</item>
+    </style>
+    <style name="TextAppearance.EWallet.Subtitle" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+    <style name="TextAppearance.EWallet.Title" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="Theme.EWallet" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="android:windowBackground">@color/bg_dark</item>
+        <item name="android:statusBarColor">@color/bg_dark</item>
+        <item name="android:navigationBarColor">@color/bg_dark</item>
+        <item name="colorPrimary">@color/purple_primary</item>
+        <item name="colorPrimaryVariant">@color/purple_gradient_end</item>
+        <item name="colorOnPrimary">@color/text_primary</item>
+        <item name="colorSurface">@color/bg_card</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+    <style name="Widget.EWallet.Button.Primary" parent="Widget.MaterialComponents.Button">
+        <item name="android:backgroundTint">@color/purple_primary</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">16sp</item>
+        <item name="cornerRadius">30dp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+    <style name="Widget.EWallet.Card" parent="Widget.MaterialComponents.CardView">
+        <item name="cardBackgroundColor">@color/bg_card</item>
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardElevation">0dp</item>
+    </style>
+</resources>
