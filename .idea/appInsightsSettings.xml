@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.ewallet.app" />
+                  <option name="mobileSdkAppId" value="1:594704954701:android:4757f860865f640a9ff304" />
+                  <option name="projectId" value="ewallet-app-smd" />
+                  <option name="projectNumber" value="594704954701" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

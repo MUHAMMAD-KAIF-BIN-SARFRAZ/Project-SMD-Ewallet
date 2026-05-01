@@ -1,3 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Project SMD</string>
+    <string name="app_name">EWallet</string>
+    <string name="hi_user">Hi </string>
+    <string name="your_balance">Your balance</string>
+    <string name="top_up">Top up</string>
+    <string name="transfer">Transfer</string>
+    <string name="request">Request</string>
+    <string name="more">More</string>
+    <string name="recent_transactions">Recent transactions</string>
+    <string name="see_all">See all</string>
+    <string name="statistics">Statistics</string>
+    <string name="top_spendings">Top spendings</string>
+    <string name="top_incomes">Top incomes</string>
+    <string name="view_chart">View chart</string>
+    <string name="manage_wallet">Manage your wallet</string>
+    <string name="onboarding_subtitle">Connect your wallet to your bank accounts\nto improve your experience</string>
+    <string name="get_started">Get started</string>
+    <string name="shopping">Shopping</string>
+    <string name="debt">Debt</string>
+    <string name="entertainment">Entertainment</string>
+    <string name="others">Others</string>
+    <string name="salary">Salary</string>
+    <string name="loan">Loan</string>
+    <string name="savings">Savings</string>
+    <string name="family">Family</string>
 </resources>

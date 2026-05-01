@@ -1,5 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- Background Colors -->
+    <color name="bg_dark">#0E0E0E</color>
+    <color name="bg_card">#1A1A1A</color>
+    <color name="bg_card_secondary">#222222</color>
+    <color name="bg_item">#1E1E1E</color>
+
+    <!-- Brand Colors -->
+    <color name="purple_primary">#8B5CF6</color>
+    <color name="purple_light">#A78BFA</color>
+    <color name="purple_gradient_start">#8B5CF6</color>
+    <color name="purple_gradient_end">#6366F1</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#9CA3AF</color>
+    <color name="text_hint">#6B7280</color>
+
+    <!-- Accent Colors -->
+    <color name="green_income">#22C55E</color>
+    <color name="red_expense">#EF4444</color>
+    <color name="blue_accent">#3B82F6</color>
+
+    <!-- Icon Category Colors -->
+    <color name="icon_food">#F59E0B</color>
+    <color name="icon_loan">#8B5CF6</color>
+    <color name="icon_salary">#22C55E</color>
+    <color name="icon_party">#EC4899</color>
+
+    <!-- Bottom Nav -->
+    <color name="nav_active">#FFFFFF</color>
+    <color name="nav_inactive">#6B7280</color>
+    <color name="nav_fab_bg">#8B5CF6</color>
 </resources>
