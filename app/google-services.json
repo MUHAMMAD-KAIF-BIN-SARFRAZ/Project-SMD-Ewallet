@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "594704954701",
+    "project_id": "ewallet-app-smd",
+    "storage_bucket": "ewallet-app-smd.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:594704954701:android:4757f860865f640a9ff304",
+        "android_client_info": {
+          "package_name": "com.ewallet.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0suGU4dO1-xlHN4pZiGL1r9HW-eeTYbs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

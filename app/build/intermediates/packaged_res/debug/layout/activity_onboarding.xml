@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_dark">
+
+    <!-- Card Illustration Area -->
+    <FrameLayout
+        android:id="@+id/frame_illustration"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tv_title"
+        app:layout_constraintVertical_weight="1">
+
+        <!-- Dark card (back) -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_back"
+            android:layout_width="200dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="60dp"
+            android:layout_marginStart="40dp"
+            android:rotation="-15"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="12dp"
+            app:cardBackgroundColor="#2A2A2A">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="16dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DEBIT CARD"
+                    android:textColor="#888888"
+                    android:textSize="10sp"
+                    android:letterSpacing="0.2" />
+                <View
+                    android:layout_width="30dp"
+                    android:layout_height="22dp"
+                    android:layout_marginTop="8dp"
+                    android:background="#444444" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="**** **** **** 1234"
+                    android:textColor="#888888"
+                    android:textSize="11sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Joy Lamp"
+                    android:textColor="#888888"
+                    android:textSize="10sp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Maroon card (front) -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_front"
+            android:layout_width="200dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="100dp"
+            android:layout_marginEnd="40dp"
+            android:rotation="10"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="18dp"
+            app:cardBackgroundColor="#6B1A1A">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="16dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DEBIT CARD"
+                    android:textColor="#CC8888"
+                    android:textSize="10sp"
+                    android:letterSpacing="0.2" />
+                <View
+                    android:layout_width="30dp"
+                    android:layout_height="22dp"
+                    android:layout_marginTop="8dp"
+                    android:background="#8B3A3A" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="**** **** **** 5678"
+                    android:textColor="#CC9999"
+                    android:textSize="11sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Joy Lamp"
+                    android:textColor="#CC9999"
+                    android:textSize="10sp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </FrameLayout>
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/manage_wallet"
+        android:textColor="@color/text_primary"
+        android:textSize="26sp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@id/tv_subtitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Subtitle -->
+    <TextView
+        android:id="@+id/tv_subtitle"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:text="@string/onboarding_subtitle"
+        android:textColor="@color/text_secondary"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:lineSpacingMultiplier="1.4"
+        app:layout_constraintBottom_toTopOf="@id/view_indicator"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Page Indicator -->
+    <LinearLayout
+        android:id="@+id/view_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="6dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@id/btn_get_started"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="32dp">
+
+        <View
+            android:layout_width="28dp"
+            android:layout_height="6dp"
+            android:background="@drawable/bg_dot_active" />
+
+        <View
+            android:layout_width="8dp"
+            android:layout_height="6dp"
+            android:layout_marginStart="6dp"
+            android:background="#444444"
+            android:backgroundTint="#444444" />
+
+        <View
+            android:layout_width="8dp"
+            android:layout_height="6dp"
+            android:layout_marginStart="6dp"
+            android:background="#444444" />
+    </LinearLayout>
+
+    <!-- Get Started Button -->
+    <Button
+        android:id="@+id/btn_get_started"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="48dp"
+        android:text="@string/get_started"
+        android:textColor="@color/text_primary"
+        android:textSize="16sp"
+        android:fontFamily="sans-serif-medium"
+        android:background="@drawable/bg_button_primary"
+        android:stateListAnimator="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

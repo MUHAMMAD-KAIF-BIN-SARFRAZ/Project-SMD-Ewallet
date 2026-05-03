@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.ewallet.app-mergeDebugResources-34:/values-v18/values-v18.xml",
+            "map": [
+                {
+                    "source": "/Users/mkbs/.gradle/caches/8.13/transforms/ce2c144e412f1b696a19a0bf07112564/transformed/appcompat-1.6.1/res/values-v18/values-v18.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "48",
+                        "endOffsets": "99"
+                    }
+                }
+            ]
+        }
+    ]
+}

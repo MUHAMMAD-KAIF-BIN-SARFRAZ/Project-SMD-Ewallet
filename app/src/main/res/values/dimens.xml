@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="screen_padding">20dp</dimen>
+    <dimen name="card_corner_radius">16dp</dimen>
+    <dimen name="card_inner_padding">16dp</dimen>
+    <dimen name="item_spacing">12dp</dimen>
+    <dimen name="section_spacing">24dp</dimen>
+    <dimen name="bottom_nav_height">65dp</dimen>
+    <dimen name="icon_size_small">20dp</dimen>
+    <dimen name="icon_size_medium">24dp</dimen>
+    <dimen name="icon_size_large">40dp</dimen>
+    <dimen name="transaction_icon_size">44dp</dimen>
+    <dimen name="action_button_size">52dp</dimen>
+    <dimen name="fab_size">56dp</dimen>
+    <dimen name="text_small">12sp</dimen>
+    <dimen name="text_body">14sp</dimen>
+    <dimen name="text_medium">16sp</dimen>
+    <dimen name="text_large">18sp</dimen>
+    <dimen name="text_xlarge">22sp</dimen>
+    <dimen name="text_balance">32sp</dimen>
+    <dimen name="balance_card_height">170dp</dimen>
+</resources>

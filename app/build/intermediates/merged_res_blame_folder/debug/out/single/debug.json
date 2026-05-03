@@ -1,0 +1,66 @@
+[
+    {
+        "merged": "com.ewallet.app-merged_res-36:/drawable_bg_stat_card.xml.flat",
+        "source": "com.ewallet.app-main-38:/drawable/bg_stat_card.xml"
+    },
+    {
+        "merged": "com.ewallet.app-merged_res-36:/drawable_bg_tab_active.xml.flat",
+        "source": "com.ewallet.app-main-38:/drawable/bg_tab_active.xml"
+    },
+    {
+        "merged": "com.ewallet.app-merged_res-36:/layout_activity_login.xml.flat",
+        "source": "com.ewallet.app-main-38:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.ewallet.app-merged_res-36:/drawable_bg_card_dark.xml.flat",
+        "source": "com.ewallet.app-main-38:/drawable/bg_card_dark.xml"
+    },
+    {
+        "merged": "com.ewallet.app-merged_res-36:/drawable_bg_button_primary.xml.flat",
+        "source": "com.ewallet.app-main-38:/drawable/bg_button_primary.xml"
+    },
+    {
+        "merged": "com.ewallet.app-merged_res-36:/layout_activity_onboarding.xml.flat",
+        "source": "com.ewallet.app-main-38:/layout/activity_onboarding.xml"
+    },
+    {
+        "merged": "com.ewallet.app-merged_res-36:/drawable_bg_circle_dark.xml.flat",
+        "source": "com.ewallet.app-main-38:/drawable/bg_circle_dark.xml"
+    },
+    {
+        "merged": "com.ewallet.app-merged_res-36:/layout_item_transaction.xml.flat",
+        "source": "com.ewallet.app-main-38:/layout/item_transaction.xml"
+    },
+    {
+        "merged": "com.ewallet.app-merged_res-36:/drawable_bg_dot_active.xml.flat",
+        "source": "com.ewallet.app-main-38:/drawable/bg_dot_active.xml"
+    },
+    {
+        "merged": "com.ewallet.app-merged_res-36:/drawable_ic_launcher.xml.flat",
+        "source": "com.ewallet.app-main-38:/drawable/ic_launcher.xml"
+    },
+    {
+        "merged": "com.ewallet.app-merged_res-36:/layout_activity_statistics.xml.flat",
+        "source": "com.ewallet.app-main-38:/layout/activity_statistics.xml"
+    },
+    {
+        "merged": "com.ewallet.app-merged_res-36:/drawable_bg_bottom_nav.xml.flat",
+        "source": "com.ewallet.app-main-38:/drawable/bg_bottom_nav.xml"
+    },
+    {
+        "merged": "com.ewallet.app-merged_res-36:/drawable_bg_input_field.xml.flat",
+        "source": "com.ewallet.app-main-38:/drawable/bg_input_field.xml"
+    },
+    {
+        "merged": "com.ewallet.app-merged_res-36:/drawable_bg_balance_card.xml.flat",
+        "source": "com.ewallet.app-main-38:/drawable/bg_balance_card.xml"
+    },
+    {
+        "merged": "com.ewallet.app-merged_res-36:/drawable_bg_circle_purple.xml.flat",
+        "source": "com.ewallet.app-main-38:/drawable/bg_circle_purple.xml"
+    },
+    {
+        "merged": "com.ewallet.app-merged_res-36:/layout_activity_main.xml.flat",
+        "source": "com.ewallet.app-main-38:/layout/activity_main.xml"
+    }
+]
