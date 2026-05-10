@@ -3316,6 +3316,12 @@ id chain2
 id chains
 id checkbox
 id checked
+id chip_debt
+id chip_entertainment
+id chip_group_category
+id chip_others
+id chip_shopping
+id chip_transfer
 id chronometer
 id circle_center
 id clear_text

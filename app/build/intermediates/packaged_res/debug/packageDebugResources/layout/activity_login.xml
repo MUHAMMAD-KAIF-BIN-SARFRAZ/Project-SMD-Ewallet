@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:background="@color/bg_dark">
 
-    <!-- Scrollable to handle keyboard push -->
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -19,7 +18,6 @@
             android:paddingStart="24dp"
             android:paddingEnd="24dp">
 
-            <!-- Logo / Icon -->
             <ImageView
                 android:id="@+id/iv_logo"
                 android:layout_width="72dp"
@@ -32,7 +30,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
-            <!-- App Name -->
             <TextView
                 android:id="@+id/tv_app_name"
                 android:layout_width="wrap_content"
@@ -58,7 +55,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
-            <!-- Tab Toggle: Login / Sign Up -->
             <LinearLayout
                 android:id="@+id/ll_tab_container"
                 android:layout_width="match_parent"
@@ -96,7 +92,6 @@
                     android:background="@android:color/transparent" />
             </LinearLayout>
 
-            <!-- Form Card -->
             <LinearLayout
                 android:id="@+id/ll_form"
                 android:layout_width="match_parent"
@@ -109,7 +104,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent">
 
-                <!-- Full Name (Sign Up only) -->
                 <TextView
                     android:id="@+id/tv_label_name"
                     android:layout_width="wrap_content"
@@ -153,7 +147,6 @@
                         android:singleLine="true" />
                 </LinearLayout>
 
-                <!-- Email -->
                 <TextView
                     android:id="@+id/tv_label_email"
                     android:layout_width="wrap_content"
@@ -194,7 +187,6 @@
                         android:singleLine="true" />
                 </LinearLayout>
 
-                <!-- Password -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -244,7 +236,6 @@
                         android:focusable="true" />
                 </LinearLayout>
 
-                <!-- Forgot Password (Login only) -->
                 <TextView
                     android:id="@+id/tv_forgot_password"
                     android:layout_width="wrap_content"
@@ -257,7 +248,6 @@
 
             </LinearLayout>
 
-            <!-- Error message -->
             <TextView
                 android:id="@+id/tv_error"
                 android:layout_width="match_parent"
@@ -271,7 +261,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
-            <!-- Primary Action Button -->
             <Button
                 android:id="@+id/btn_action"
                 android:layout_width="match_parent"
@@ -287,7 +276,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
-            <!-- Loading Indicator -->
             <ProgressBar
                 android:id="@+id/progress_bar"
                 android:layout_width="36dp"
@@ -301,9 +289,6 @@
 
 
 
-
-
-            <!-- Bottom padding -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="40dp"

@@ -52,12 +52,12 @@
         "source": "/Users/mkbs/.gradle/daemon/8.13/com.ewallet.app-main-49:/layout/item_transaction.xml"
     },
     {
-        "merged": "/Users/mkbs/.gradle/daemon/8.13/com.ewallet.app-debug-47:/drawable_bg_dot_active.xml.flat",
-        "source": "/Users/mkbs/.gradle/daemon/8.13/com.ewallet.app-main-49:/drawable/bg_dot_active.xml"
-    },
-    {
         "merged": "/Users/mkbs/.gradle/daemon/8.13/com.ewallet.app-debug-47:/drawable_bg_bottom_nav.xml.flat",
         "source": "/Users/mkbs/.gradle/daemon/8.13/com.ewallet.app-main-49:/drawable/bg_bottom_nav.xml"
+    },
+    {
+        "merged": "/Users/mkbs/.gradle/daemon/8.13/com.ewallet.app-debug-47:/drawable_bg_dot_active.xml.flat",
+        "source": "/Users/mkbs/.gradle/daemon/8.13/com.ewallet.app-main-49:/drawable/bg_dot_active.xml"
     },
     {
         "merged": "/Users/mkbs/.gradle/daemon/8.13/com.ewallet.app-debug-47:/drawable_bg_button_primary.xml.flat",
@@ -72,8 +72,8 @@
         "source": "/Users/mkbs/.gradle/daemon/8.13/com.ewallet.app-main-49:/drawable/ic_launcher.xml"
     },
     {
-        "merged": "com.ewallet.app-debug-47:/layout_activity_statistics.xml.flat",
-        "source": "com.ewallet.app-main-49:/layout/activity_statistics.xml"
+        "merged": "com.ewallet.app-debug-47:/layout_activity_transfer.xml.flat",
+        "source": "com.ewallet.app-main-49:/layout/activity_transfer.xml"
     },
     {
         "merged": "/Users/mkbs/.gradle/daemon/8.13/com.ewallet.app-debug-47:/drawable_bg_input_field.xml.flat",

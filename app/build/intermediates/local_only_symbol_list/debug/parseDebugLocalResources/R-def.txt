@@ -64,6 +64,12 @@ id btn_transfer
 id card_back
 id card_balance
 id card_front
+id chip_debt
+id chip_entertainment
+id chip_group_category
+id chip_others
+id chip_shopping
+id chip_transfer
 id et_amount
 id et_description
 id et_email
