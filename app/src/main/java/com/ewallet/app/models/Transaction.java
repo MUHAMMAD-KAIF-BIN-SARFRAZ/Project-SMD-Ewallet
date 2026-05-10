@@ -6,21 +6,20 @@ import java.util.Locale;
 
 public class Transaction {
 
-    // DB fields
-    private String id;           // Firebase push key
-    private String title;        // e.g. "Sent to Ali"
-    private String type;         // "top_up" | "transfer" | "payment" | "withdrawal"
-    private String flow;         // "credit" | "debit"
-    private String category;     // "food" | "shopping" | "utilities" | "other" | …
-    private String description;  // optional user note
-    private String status;       // "success" | "pending" | "failed"
-    private String referenceId;  // receipt / ref number
-    private double amount;
-    private double balanceAfter; // wallet snapshot after this transaction
-    private boolean isCredit;    // derived from flow
-    private long date;           // epoch ms
 
-    // ── Constructor (used by MainActivity when parsing from Firebase) ─────────
+    private String id;
+    private String title;
+    private String type;
+    private String flow;
+    private String category;
+    private String description;
+    private String status;
+    private String referenceId;
+    private double amount;
+    private double balanceAfter;
+    private boolean isCredit;
+    private long date;
+
     public Transaction(String id, String title, String type, String flow,
                        String category, String description, String status,
                        String referenceId, double amount, double balanceAfter,
@@ -38,12 +37,8 @@ public class Transaction {
         this.isCredit     = isCredit;
         this.date         = date;
     }
-
-    // ── No-arg constructor (required by Firebase deserializer if used with
-    //    getValue(Transaction.class) in the future) ───────────────────────────
     public Transaction() {}
 
-    // ── Getters ──────────────────────────────────────────────────────────────
 
     public String getId()           { return id; }
     public String getTitle()        { return title; }
@@ -58,25 +53,18 @@ public class Transaction {
     public boolean isCredit()       { return isCredit; }
     public long getDate()           { return date; }
 
-    // ── Derived helpers (used by the adapter) ────────────────────────────────
-
-    /** Returns amount formatted with sign: "+PKR 500.00" or "-PKR 500.00" */
     public String getFormattedAmount() {
         return String.format(Locale.US, "%sPKR %.2f",
                 isCredit ? "+" : "-", amount);
     }
 
-    /** Returns date as a readable string: "Dec 28, 2023" */
     public String getFormattedDate() {
         if (date == 0) return "";
         SimpleDateFormat sdf = new SimpleDateFormat("MMM dd, yyyy", Locale.US);
         return sdf.format(new Date(date));
     }
 
-    /**
-     * Returns a single emoji/label that can be shown as a category icon
-     * in the adapter until you have custom drawables.
-     */
+
     public String getCategoryEmoji() {
         if (category == null) return "💳";
         switch (category.toLowerCase(Locale.US)) {

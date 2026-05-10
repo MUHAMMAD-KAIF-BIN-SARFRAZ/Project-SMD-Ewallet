@@ -23,10 +23,8 @@ public class StatisticsActivity extends AppCompatActivity {
 
     private DatabaseReference txRef;
 
-    // ── Expense TextViews ────────────────────────────────────────────────────
     private TextView tvShopping, tvDebt, tvEntertainment, tvTransfer, tvOthers;
 
-    // ── Income TextViews ─────────────────────────────────────────────────────
     private TextView tvSalary, tvLoan, tvSavings, tvTopUp, tvIncomeOthers;
 
     @Override
@@ -47,10 +45,8 @@ public class StatisticsActivity extends AppCompatActivity {
         setupClickListeners();
     }
 
-    // ── Views ────────────────────────────────────────────────────────────────
 
     private void initViews() {
-        // IDs match activity_statistics.xml exactly
         tvShopping      = findViewById(R.id.tv_spend_shopping);
         tvDebt          = findViewById(R.id.tv_spend_debt);
         tvEntertainment = findViewById(R.id.tv_spend_entertainment);
@@ -63,8 +59,6 @@ public class StatisticsActivity extends AppCompatActivity {
         tvTopUp         = findViewById(R.id.tv_income_topup);
         tvIncomeOthers  = findViewById(R.id.tv_income_others);
     }
-
-    // ── Load from Firebase ───────────────────────────────────────────────────
 
     private void loadStats() {
         txRef.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -93,7 +87,7 @@ public class StatisticsActivity extends AppCompatActivity {
                             case "transfer":      transfer      += amount; break;
                             default:              expenseOthers += amount; break;
                         }
-                    } else {  // credit
+                    } else {
                         switch (category) {
                             case "salary":  salary       += amount; break;
                             case "loan":    loan         += amount; break;
@@ -113,20 +107,18 @@ public class StatisticsActivity extends AppCompatActivity {
         });
     }
 
-    // ── Update UI ────────────────────────────────────────────────────────────
-
     private void updateUI(double shopping, double debt, double entertainment,
                           double transfer, double expenseOthers,
                           double salary, double loan, double savings,
                           double topUp, double incomeOthers) {
-        // Expenses
+
         tvShopping.setText(fmt(shopping));
         tvDebt.setText(fmt(debt));
         tvEntertainment.setText(fmt(entertainment));
         tvTransfer.setText(fmt(transfer));
         tvOthers.setText(fmt(expenseOthers));
 
-        // Incomes
+
         tvSalary.setText(fmt(salary));
         tvLoan.setText(fmt(loan));
         tvSavings.setText(fmt(savings));
@@ -134,7 +126,6 @@ public class StatisticsActivity extends AppCompatActivity {
         tvIncomeOthers.setText(fmt(incomeOthers));
     }
 
-    /** Formats a double as "PKR 1,500.00" */
     private String fmt(double value) {
         NumberFormat nf = NumberFormat.getNumberInstance(Locale.US);
         nf.setMinimumFractionDigits(2);
@@ -142,21 +133,16 @@ public class StatisticsActivity extends AppCompatActivity {
         return "PKR " + nf.format(value);
     }
 
-    // ── Click listeners ──────────────────────────────────────────────────────
-
     private void setupClickListeners() {
-        // Back to MainActivity
         LinearLayout navHome = findViewById(R.id.nav_home_from_stats);
         if (navHome != null) navHome.setOnClickListener(v -> finish());
 
-        // Profile / account
         LinearLayout navProfile = findViewById(R.id.nav_profile);
         if (navProfile != null) {
             navProfile.setOnClickListener(v ->
                     startActivity(new Intent(this, AccountActivity.class)));
         }
 
-        // Chart buttons – placeholders for now
         TextView tvChartSpendings = findViewById(R.id.tv_view_chart_spendings);
         if (tvChartSpendings != null) {
             tvChartSpendings.setOnClickListener(v ->

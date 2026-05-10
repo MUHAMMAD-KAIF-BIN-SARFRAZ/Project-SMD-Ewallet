@@ -83,8 +83,6 @@ public class TransferActivity extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(v -> onBackPressed());
     }
 
-    // ── BALANCE ─────────────────────────────
-
     private void fetchBalance() {
         rootRef.child("users").child(currentUid)
                 .child("balance")
@@ -107,7 +105,6 @@ public class TransferActivity extends AppCompatActivity {
         tvAvailableBalance.setText("Available: PKR " + fmt.format(currentBalance));
     }
 
-    // ── VALIDATION ─────────────────────────────
 
     private boolean validate(String uid, String amountStr) {
 
@@ -168,8 +165,6 @@ public class TransferActivity extends AppCompatActivity {
                 .show();
     }
 
-    // ── CHECK RECEIVER ─────────────────────────────
-
     private void checkReceiverAndTransfer(String receiverUid, double amount, String desc) {
 
         rootRef.child("users").child(receiverUid)
@@ -192,7 +187,6 @@ public class TransferActivity extends AppCompatActivity {
                 });
     }
 
-    // ── CORE TRANSFER ─────────────────────────────
 
     private void processTransfer(String receiverUid, double amount, String desc) {
 
@@ -248,7 +242,6 @@ public class TransferActivity extends AppCompatActivity {
         });
     }
 
-    // ── SAVE TRANSACTIONS ─────────────────────────────
 
     private void saveTransactions(String receiverUid, double amount, String desc,
                                   double senderBalAfter, double receiverBalAfter) {
@@ -286,7 +279,6 @@ public class TransferActivity extends AppCompatActivity {
         showSuccess();
     }
 
-    // ── UI HELPERS ─────────────────────────────
 
     private void showSuccess() {
         new AlertDialog.Builder(this)

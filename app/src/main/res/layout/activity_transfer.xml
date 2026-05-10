@@ -12,7 +12,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- Toolbar -->
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -21,7 +20,6 @@
             app:titleTextColor="@android:color/white"
             app:navigationIcon="@drawable/back" />
 
-        <!-- Balance chip -->
         <TextView
             android:id="@+id/tv_available_balance"
             android:layout_width="wrap_content"
@@ -35,7 +33,6 @@
             android:textSize="14sp"
             android:textStyle="bold" />
 
-        <!-- Card form -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -50,7 +47,6 @@
                 android:orientation="vertical"
                 android:padding="20dp">
 
-                <!-- Section: Recipient -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -70,14 +66,12 @@
                     android:padding="14dp"
                     android:layout_marginBottom="14dp"/>
 
-                <!-- Divider -->
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:background="#F0F0F0"
                     android:layout_marginBottom="20dp" />
 
-                <!-- Section: Transfer Details -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -88,7 +82,6 @@
                     android:letterSpacing="0.08"
                     android:layout_marginBottom="12dp" />
 
-                <!-- Amount -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -109,7 +102,6 @@
                     android:inputType="numberDecimal"
                     android:layout_marginBottom="14dp" />
 
-                <!-- Description -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -132,7 +124,6 @@
                     android:maxLines="3"
                     android:layout_marginBottom="20dp" />
 
-                <!-- Error -->
                 <TextView
                     android:id="@+id/tv_error"
                     android:layout_width="match_parent"
@@ -142,7 +133,6 @@
                     android:visibility="gone"
                     android:layout_marginBottom="12dp" />
 
-                <!-- Progress -->
                 <ProgressBar
                     android:id="@+id/progress_bar"
                     android:layout_width="wrap_content"
@@ -151,7 +141,6 @@
                     android:visibility="gone"
                     android:layout_marginBottom="8dp" />
 
-                <!-- Transfer button -->
                 <Button
                     android:id="@+id/btn_transfer"
                     android:layout_width="match_parent"

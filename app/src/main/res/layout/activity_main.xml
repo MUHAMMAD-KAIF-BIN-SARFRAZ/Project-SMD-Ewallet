@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:background="@color/bg_dark">
 
-    <!-- Scrollable content -->
     <androidx.core.widget.NestedScrollView
         android:id="@+id/scroll_content"
         android:layout_width="match_parent"
@@ -24,14 +23,12 @@
             android:paddingTop="16dp"
             android:paddingBottom="16dp">
 
-            <!-- Header Row -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center_vertical">
 
-                <!-- Avatar -->
                 <ImageView
                     android:id="@+id/iv_avatar"
                     android:layout_width="46dp"
@@ -40,7 +37,6 @@
                     android:scaleType="centerCrop"
                     android:src="@android:drawable/ic_menu_my_calendar" />
 
-                <!-- Greeting -->
                 <TextView
                     android:id="@+id/tv_greeting"
                     android:layout_width="0dp"
@@ -52,7 +48,6 @@
                     android:textSize="18sp"
                     android:fontFamily="sans-serif-medium" />
 
-                <!-- Notification Bell -->
                 <ImageView
                     android:id="@+id/iv_notification"
                     android:layout_width="40dp"
@@ -63,7 +58,6 @@
                     android:tint="@color/text_primary" />
             </LinearLayout>
 
-            <!-- Balance Card -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_balance"
                 android:layout_width="match_parent"
@@ -116,7 +110,6 @@
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Action Buttons Row -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -124,7 +117,6 @@
                 android:orientation="horizontal"
                 android:gravity="center">
 
-                <!-- Top Up -->
                 <LinearLayout
                     android:id="@+id/btn_top_up"
                     android:layout_width="0dp"
@@ -148,7 +140,6 @@
                         android:textSize="12sp" />
                 </LinearLayout>
 
-                <!-- Transfer -->
                 <LinearLayout
                     android:id="@+id/btn_transfer"
                     android:layout_width="0dp"
@@ -172,7 +163,6 @@
                         android:textSize="12sp" />
                 </LinearLayout>
 
-                <!-- Request -->
                 <LinearLayout
                     android:id="@+id/btn_request"
                     android:layout_width="0dp"
@@ -196,7 +186,6 @@
                         android:textSize="12sp" />
                 </LinearLayout>
 
-                <!-- More -->
                 <LinearLayout
                     android:id="@+id/btn_more"
                     android:layout_width="0dp"
@@ -221,7 +210,6 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <!-- Recent Transactions Header -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -247,7 +235,6 @@
                     android:textSize="13sp" />
             </LinearLayout>
 
-            <!-- Transactions List -->
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_transactions"
                 android:layout_width="match_parent"
@@ -266,7 +253,6 @@
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
-    <!-- Bottom Navigation Bar -->
     <LinearLayout
         android:id="@+id/bottom_nav"
         android:layout_width="match_parent"
@@ -280,7 +266,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- Home -->
         <LinearLayout
             android:id="@+id/nav_home"
             android:layout_width="0dp"
@@ -295,7 +280,6 @@
                 android:tint="@color/text_primary" />
         </LinearLayout>
 
-        <!-- Cards -->
         <LinearLayout
             android:id="@+id/nav_cards"
             android:layout_width="0dp"
@@ -310,7 +294,6 @@
                 android:tint="@color/nav_inactive" />
         </LinearLayout>
 
-        <!-- FAB Center -->
         <LinearLayout
             android:id="@+id/nav_fab"
             android:layout_width="0dp"
@@ -327,7 +310,6 @@
                 android:tint="@color/text_primary" />
         </LinearLayout>
 
-        <!-- Statistics -->
         <LinearLayout
             android:id="@+id/nav_stats"
             android:layout_width="0dp"
@@ -342,7 +324,6 @@
                 android:tint="@color/nav_inactive" />
         </LinearLayout>
 
-        <!-- Profile -->
         <LinearLayout
             android:id="@+id/nav_profile"
             android:layout_width="0dp"

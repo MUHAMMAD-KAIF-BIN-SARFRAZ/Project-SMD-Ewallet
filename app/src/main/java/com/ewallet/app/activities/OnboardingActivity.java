@@ -25,17 +25,14 @@ public class OnboardingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // ── Check login state FIRST before inflating onboarding ──────────────
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser currentUser = mAuth.getCurrentUser();
 
         if (currentUser != null) {
-            // Already logged in — go straight to home, skip onboarding & login
             goToMain();
             return;
         }
 
-        // Not logged in — show onboarding
         setContentView(R.layout.activity_onboarding);
 
         getWindow().getDecorView().setSystemUiVisibility(

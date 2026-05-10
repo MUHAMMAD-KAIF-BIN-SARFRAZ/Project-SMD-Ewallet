@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:background="@color/bg_dark">
 
-    <!-- Content -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -47,7 +46,6 @@
 
     </LinearLayout>
 
-    <!-- Bottom Navigation -->
     <LinearLayout
         android:id="@+id/bottom_nav"
         android:layout_width="match_parent"
@@ -59,7 +57,6 @@
         android:paddingEnd="8dp"
         app:layout_constraintBottom_toBottomOf="parent">
 
-        <!-- Home -->
         <LinearLayout
             android:id="@+id/nav_home"
             android:layout_width="0dp"
@@ -73,7 +70,6 @@
                 android:tint="@color/nav_inactive"/>
         </LinearLayout>
 
-        <!-- Cards -->
         <LinearLayout
             android:id="@+id/nav_cards"
             android:layout_width="0dp"
@@ -87,7 +83,6 @@
                 android:tint="@color/nav_inactive"/>
         </LinearLayout>
 
-        <!-- FAB -->
         <LinearLayout
             android:id="@+id/nav_fab"
             android:layout_width="0dp"
@@ -103,7 +98,6 @@
                 android:tint="@color/text_primary"/>
         </LinearLayout>
 
-        <!-- Stats -->
         <LinearLayout
             android:id="@+id/nav_stats"
             android:layout_width="0dp"
@@ -117,7 +111,6 @@
                 android:tint="@color/nav_inactive"/>
         </LinearLayout>
 
-        <!-- Profile (ACTIVE) -->
         <LinearLayout
             android:id="@+id/nav_profile"
             android:layout_width="0dp"

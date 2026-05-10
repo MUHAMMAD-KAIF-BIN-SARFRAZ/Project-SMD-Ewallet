@@ -11,7 +11,6 @@ import android.widget.Toast;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -35,11 +34,9 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
-    // Firebase
     private FirebaseAuth mAuth;
     private DatabaseReference mUserRef;
 
-    // UI
     private RecyclerView rvTransactions;
     private TransactionAdapter adapter;
     private List<Transaction> transactionList;
@@ -47,10 +44,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView tvGreeting;
     private TextView tvEmptyState;
 
-    // Live listener – detached in onStop, re-attached in onStart
     private ValueEventListener userListener;
 
-    // Launcher for TransferActivity
     private ActivityResultLauncher<Intent> transferLauncher;
 
     @Override
@@ -61,18 +56,14 @@ public class MainActivity extends AppCompatActivity {
         getWindow().getDecorView().setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
 
-        // Register result launcher BEFORE any possible finish() call
         transferLauncher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
                 result -> {
-                    // The live Firebase listener already reflects balance/tx changes
-                    // automatically – no extra work needed here.
                     if (result.getResultCode() == Activity.RESULT_OK) {
                         Toast.makeText(this, "Transfer completed", Toast.LENGTH_SHORT).show();
                     }
                 });
 
-        // Init Firebase
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
 
@@ -93,17 +84,12 @@ public class MainActivity extends AppCompatActivity {
         attachUserListener();
     }
 
-    // ── Views ────────────────────────────────────────────────────────────────
-
     private void initViews() {
         tvGreeting     = findViewById(R.id.tv_greeting);
         tvBalance      = findViewById(R.id.tv_balance);
         rvTransactions = findViewById(R.id.rv_transactions);
         tvEmptyState   = findViewById(R.id.tv_empty_state); // optional – add to layout
     }
-
-    // ── Greeting ─────────────────────────────────────────────────────────────
-
     private void setupGreeting(FirebaseUser user) {
         if (tvGreeting == null) return;
         String displayName = user.getDisplayName();
@@ -113,9 +99,6 @@ public class MainActivity extends AppCompatActivity {
             tvGreeting.setText("Hi there");
         }
     }
-
-    // ── RecyclerView ─────────────────────────────────────────────────────────
-
     private void setupRecyclerView() {
         transactionList = new ArrayList<>();
         adapter = new TransactionAdapter(this, transactionList);
@@ -124,26 +107,21 @@ public class MainActivity extends AppCompatActivity {
         rvTransactions.setNestedScrollingEnabled(false);
     }
 
-    // ── Firebase live listener ───────────────────────────────────────────────
-
     private void attachUserListener() {
         userListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (!snapshot.exists()) return;
 
-                // Balance
                 Double balance = snapshot.child("balance").getValue(Double.class);
                 updateBalanceUI(balance != null ? balance : 0.00);
 
-                // Transactions
                 List<Transaction> freshList = new ArrayList<>();
                 for (DataSnapshot txEntry : snapshot.child("transactions").getChildren()) {
                     Transaction tx = parseTransaction(txEntry);
                     if (tx != null) freshList.add(tx);
                 }
 
-                // Newest first
                 Collections.sort(freshList,
                         (a, b) -> Long.compare(b.getDate(), a.getDate()));
 
@@ -190,7 +168,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    // ── Balance UI ───────────────────────────────────────────────────────────
 
     private void updateBalanceUI(double balance) {
         if (tvBalance == null) return;
@@ -200,7 +177,6 @@ public class MainActivity extends AppCompatActivity {
         tvBalance.setText("PKR " + fmt.format(balance));
     }
 
-    // ── Lifecycle ────────────────────────────────────────────────────────────
 
     @Override
     protected void onStop() {
@@ -227,7 +203,6 @@ public class MainActivity extends AppCompatActivity {
         finish();
     }
 
-    // ── Click listeners ──────────────────────────────────────────────────────
     private void performTopUp(double amount) {
 
         if (mUserRef == null) return;
@@ -247,7 +222,6 @@ public class MainActivity extends AppCompatActivity {
                 String refId = "TXN-" + java.util.UUID.randomUUID().toString().substring(0, 8).toUpperCase();
                 String txKey = java.util.UUID.randomUUID().toString();
 
-                // Create transaction
                 java.util.Map<String, Object> txMap = new java.util.HashMap<>();
                 txMap.put("title", "Top Up");
                 txMap.put("type", "topup");
@@ -259,8 +233,6 @@ public class MainActivity extends AppCompatActivity {
                 txMap.put("amount", amount);
                 txMap.put("balanceAfter", newBalance);
                 txMap.put("date", now);
-
-                // Update DB
                 mutableData.child("balance").setValue(newBalance);
                 mutableData.child("transactions").child(txKey).setValue(txMap);
 
@@ -296,7 +268,6 @@ public class MainActivity extends AppCompatActivity {
             btnTopUp.setOnClickListener(v -> performTopUp(100));
         }
 
-        // Launch TransferActivity
         if (btnTransfer != null) {
             btnTransfer.setOnClickListener(v -> {
                 Intent intent = new Intent(MainActivity.this, TransferActivity.class);
@@ -349,8 +320,6 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(this, "Quick Action coming soon", Toast.LENGTH_SHORT).show());
         }
     }
-
-    // ── DataSnapshot helpers ─────────────────────────────────────────────────
 
     private String getStr(DataSnapshot snap, String key) {
         Object val = snap.child(key).getValue();

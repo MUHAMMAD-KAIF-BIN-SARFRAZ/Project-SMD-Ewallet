@@ -33,11 +33,8 @@ import java.util.Map;
 
 public class LoginActivity extends AppCompatActivity {
 
-    // Firebase
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
-
-    // UI
     private TextView tabLogin, tabSignup;
     private LinearLayout llNameField;
     private TextView tvLabelName, tvForgotPassword;
@@ -54,8 +51,6 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
-        // Init Firebase
         mAuth     = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase
                 .getInstance("https://ewallet-app-smd-default-rtdb.asia-southeast1.firebasedatabase.app")
@@ -80,8 +75,6 @@ public class LoginActivity extends AppCompatActivity {
         tvError          = findViewById(R.id.tv_error);
         ivTogglePassword = findViewById(R.id.iv_toggle_password);
     }
-
-    // ── Tab switching ────────────────────────────────────────────────────────
 
     private void setupTabToggle() {
         tabLogin.setOnClickListener(v -> switchToLogin());
@@ -120,7 +113,6 @@ public class LoginActivity extends AppCompatActivity {
         clearError();
     }
 
-    // ── Click listeners ──────────────────────────────────────────────────────
 
     private void setupClickListeners() {
 
@@ -134,7 +126,6 @@ public class LoginActivity extends AppCompatActivity {
         tvForgotPassword.setOnClickListener(v -> handleForgotPassword());
     }
 
-    // ── Auth: Login ──────────────────────────────────────────────────────────
 
     private void handleLogin() {
         String email    = etEmail.getText().toString().trim();
@@ -151,8 +142,6 @@ public class LoginActivity extends AppCompatActivity {
                     else showError(getLoginErrorMessage(task.getException()));
                 });
     }
-
-    // ── Auth: Sign Up ────────────────────────────────────────────────────────
 
     private void handleSignup() {
         String name     = etName.getText().toString().trim();
@@ -178,7 +167,6 @@ public class LoginActivity extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         FirebaseUser user = mAuth.getCurrentUser();
                         if (user != null) {
-                            // 1. Save display name to Firebase Auth profile
                             UserProfileChangeRequest profileUpdate =
                                     new UserProfileChangeRequest.Builder()
                                             .setDisplayName(name)
@@ -186,7 +174,6 @@ public class LoginActivity extends AppCompatActivity {
 
                             user.updateProfile(profileUpdate)
                                     .addOnCompleteListener(profileTask ->
-                                            // 2. Write user record to Realtime Database
                                             createUserInDatabase(user.getUid(), name, email));
                         } else {
                             showLoading(false);
@@ -199,34 +186,6 @@ public class LoginActivity extends AppCompatActivity {
                 });
     }
 
-    // ── Database: Create user record ─────────────────────────────────────────
-
-    /**
-     * Writes a fresh user node to:
-     *   /users/{uid}
-     *
-     * Schema
-     * ──────
-     * uid          (String)  – mirrors the Auth UID; handy when reading a list of users
-     * name         (String)
-     * email        (String)
-     * balance      (double)  – current wallet balance, starts at 0.00
-     * currency     (String)  – e.g. "PKR"; easy to extend later
-     * createdAt    (long)    – epoch ms
-     * transactions (Map)     – empty map; entries added later via TransactionHelper
-     *
-     * Each transaction entry (keyed by push-ID) will hold:
-     *   title        (String)  – short human-readable label, e.g. "Sent to Ali"
-     *   type         (String)  – "top_up" | "transfer" | "payment" | "withdrawal"
-     *   flow         (String)  – "credit" | "debit"
-     *   amount       (double)
-     *   balanceAfter (double)  – snapshot of balance after this tx (useful for history)
-     *   category     (String)  – "food" | "shopping" | "utilities" | "other" | …
-     *   description  (String)  – optional note from the user
-     *   status       (String)  – "success" | "pending" | "failed"
-     *   referenceId  (String)  – unique ref / receipt number
-     *   date         (long)    – epoch ms
-     */
     private void createUserInDatabase(String uid, String name, String email) {
 
         Map<String, Object> userMap = new HashMap<>();
@@ -236,7 +195,7 @@ public class LoginActivity extends AppCompatActivity {
         userMap.put("balance",      0.00);
         userMap.put("currency",     "PKR");
         userMap.put("createdAt",    System.currentTimeMillis());
-        userMap.put("transactions", new HashMap<>());   // empty; filled on first transaction
+        userMap.put("transactions", new HashMap<>());
 
         mDatabase.child("users").child(uid)
                 .setValue(userMap)
@@ -245,8 +204,6 @@ public class LoginActivity extends AppCompatActivity {
                     if (dbTask.isSuccessful()) {
                         goToMain();
                     } else {
-                        // Auth succeeded but DB write failed – still let the user in.
-                        // The record can be re-created later from MainActivity if needed.
                         Toast.makeText(this,
                                 "Account created but profile save failed. " +
                                         "Please contact support if issues arise.",
@@ -255,8 +212,6 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 });
     }
-
-    // ── Auth: Forgot Password ────────────────────────────────────────────────
 
     private void handleForgotPassword() {
         String email = etEmail.getText().toString().trim();
@@ -281,8 +236,6 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 });
     }
-
-    // ── Helpers ──────────────────────────────────────────────────────────────
 
     private boolean validateEmailPassword(String email, String password) {
         if (TextUtils.isEmpty(email)) {

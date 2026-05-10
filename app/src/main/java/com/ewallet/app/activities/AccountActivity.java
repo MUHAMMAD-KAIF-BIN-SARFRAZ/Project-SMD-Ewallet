@@ -56,7 +56,6 @@ public class AccountActivity extends AppCompatActivity {
         });
     }
 
-    // ✅ Bottom Navigation
     private void setupBottomNav() {
 
         LinearLayout navHome = findViewById(R.id.nav_home);
@@ -92,7 +91,6 @@ public class AccountActivity extends AppCompatActivity {
         // Already on profile
         if (navProfile != null) {
             navProfile.setOnClickListener(v -> {
-                // do nothing
             });
         }
     }
